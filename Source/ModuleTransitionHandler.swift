@@ -22,7 +22,7 @@ extension UIViewController: ModuleTransitionHandler {
     public func close(animated: Bool) {
         if let _ = presentingViewController {
             dismiss(animated: animated, completion: nil)
-        } else if let navigationController = navigationController, navigationController.viewControllers.count > 0 {
+        } else if let navigationController = navigationController, navigationController.viewControllers.count > 1 {
             navigationController.popViewController(animated: animated)
         } else if let _ = view.superview {
             view.removeFromSuperview()
